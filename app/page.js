@@ -3,6 +3,14 @@ import React, { useState, useEffect } from "react";
 
 const DAYS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 const TOTAL_WEEKS = 12;
+const VIDEOS = {
+  "Lunes": "https://www.youtube.com/embed/gC_L9qAHVJ8",
+  "Martes": "https://www.youtube.com/embed/ml6cT4AZdqI",
+  "Miércoles": "https://www.youtube.com/embed/UItWltVZZmE",
+  "Jueves": "https://www.youtube.com/embed/UBMk30rjy0o",
+  "Viernes": "https://www.youtube.com/embed/2pLT-olgUJs",
+  "Sábado": "https://www.youtube.com/embed/v7AYKMP6rOE"
+};
 
 export default function Home() {
   const [week, setWeek] = useState(1);
@@ -80,6 +88,16 @@ export default function Home() {
         <div style={{ marginTop: 30 }}>
           <h3>{selectedDay}</h3>
           <p>Entrenamiento guiado de 15 minutos</p>
+            <div style={{ marginTop: 20 }}>
+  <iframe
+    width="100%"
+    height="315"
+    src={VIDEOS[selectedDay]}
+    title="Entrenamiento"
+    frameBorder="0"
+    allowFullScreen
+  ></iframe>
+</div>
 
           <button
             onClick={toggleComplete}
